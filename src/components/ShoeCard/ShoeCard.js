@@ -54,6 +54,7 @@ const Link = styled.a`
   text-decoration: none;
   flex-basis: 340px;
   color: inherit;
+  margin-bottom: 62px;
 `;
 
 const Wrapper = styled.article`
@@ -64,11 +65,13 @@ const Wrapper = styled.article`
 const ImageWrapper = styled.div`
   position: relative;
   min-width: 340px;
-  flex-basis: 312px;
+  margin-bottom: -10px;
 `;
 
 const Image = styled.img`
     width: 100%;
+  border-radius: 16px 16px 4px 4px;
+  
 `;
 
 const Row = styled.div`
