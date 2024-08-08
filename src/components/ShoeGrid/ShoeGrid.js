@@ -18,5 +18,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 28px;
   `
 export default ShoeGrid;
