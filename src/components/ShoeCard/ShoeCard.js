@@ -4,6 +4,8 @@ import styled from 'styled-components/macro';
 import { COLORS, WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
+import {variantType} from "../../utils/variantType";
+import Flag from "../Flag";
 
 const ShoeCard = ({
   slug,
@@ -26,15 +28,16 @@ const ShoeCard = ({
   // will triumph and be the variant used.
   // prettier-ignore
   const variant = typeof salePrice === 'number'
-    ? 'on-sale'
+    ? variantType.ON_SALE
     : isNewShoe(releaseDate)
-      ? 'new-release'
-      : 'default'
+      ? variantType.NEW_RELEASE
+      : variantType.DEFAULT
 
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          <Flag variant={variant}></Flag>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
